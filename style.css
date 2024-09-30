@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+}
+
+.screen {
+    /* border:  2px solid #ba450b; */
+    width: 100%;
+    height: 1090px;
+}
+
+.shop-the-list {
+    /* border: 2px solid #54a70b; */
+    background-color: #E7F4FF;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-family: "Mint Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    Line-height: 20px;
+    color: rgb(0, 0, 0);
+}
+.arrow-top{
+    border:  2px solid #000000;
+    width: 20px;
+    height: 27px;
+}
+
+.navbar {
+    /* border: 2px solid #54a70b; */
+    width: 98%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.logo {
+    /* border:  2px solid #ed9119; */
+    width: 10%;
+    height: 75px;
+}
+
+.logo>img {
+    width: 90%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchDiv {
+    /* border:  2px solid #ed9119; */
+    width: 44%;
+    height: 65px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 35%;
+}
+
+.search {
+    border: 1px solid #000000;
+    width: 96%;
+    height: 42px;
+    border-radius: 50px;
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.inputStyle {
+    width: 70%;
+    height: 38px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    font-family: "Mint Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    Line-height: 21.6px;
+    color: rgb(31,31,31)
+}
+
+.searchButton {
+    font-family: "Mint Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    Line-height: 19.2px;
+    color: rgb(9,7,8)
+}
+
+.icon {
+    /* border: 2px solid #ba450b; */
+    width: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 0%;
+    font-size: 40px;
+}
+
+.login {
+    /* border: 2px solid #0b1aba;  */
+    width: 30%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bag {
+    /* border: 2px solid #0b1aba;  */
+    width: 30%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar2 {
+    /* border: 2px solid #54a70b; */
+    width: 98%;
+    height: 45px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3px;
+    box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+
+}
+
+.navigation {
+    /* border: 2px solid #edae0e; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 48%;
+    height: 36px;
+    font-family: "Mint Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    Line-height: normal;
+    color: rgb(31,31,31);
+}
+
+.help {
+    /* border: 2px solid #edae0e; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 12%;
+    height: 36px;
+    font-family: "Mint Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    Line-height: normal;
+    color: rgb(9,7,8)
+}
+
+.help a:hover {
+    text-decoration: underline;
+}
+
+/* From here body section start */
+.getOffer {
+    /* border: 2px solid #47ad10; */
+    background-color: #86B6C1;
+    width: 100%;
+    height: 170px;
+    margin-top: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.get-title {
+    /* border: 2px solid #d99919;  */
+    width: 37%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 27px;
+    margin-left: 35px;
+}
+
+.get-text {
+    /* border: 2px solid #d99919;  */
+    width: 54%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 16px;
+    line-height: 2px;
+    font-family: sans-serif;
+}
+
+.get-text>a {
+    text-decoration: underline;
+    padding-top: 7px;
+}
+
+/* from here main shoes div card images start */
+.div-img {
+    /* border: 2px solid #2bc51a; */
+    background-image: url('women-shoes.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 99%;
+    height: 560px;
+    margin-top: 5%;
+}
+
+.boot-center {
+    /* border: 2px solid #2bc51a;  */
+    width: 100%;
+    height: 60%;
+    margin-top: 3px;
+    text-align: center;
+    line-height: 14px;
+}
+
+.boot-center>a {
+    text-decoration: underline;
+}
+
+@media screen and (min-width:350px) and (max-width:650px) {
+    .logo {
+        width: 48%;
+        height: 140px;
+    }
+
+    .inputStyle {
+        display: none;
+    }
+
+    .search {
+        border: none;
+    }
+
+    .searchButton {
+        display: none;
+    }
+
+    .search-icon>span {
+        font-size: 37px;
+        margin-left: 442px;
+        /* border: 2px solid #86B6C1; */
+    }
+
+    .icon {
+        /* border: 2px solid #86B6C1; */
+        width: 18%;
+        height: 60px;
+    }
+
+    .login {
+        width: 40%;
+    }
+
+    .bag {
+        width: 40%;
+    }
+
+    .navbar2 {
+        display: none;
+    }
+
+    .getOffer {
+        height: 120px;
+    }
+
+    .get-title {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .get-text {
+        display: none;
+    }
+
+    .div-img {
+        height: 420px;
+        background-size: 1000px;
+    }
+}
+
+/* media for tablets above 650px to 800px */
+@media screen and (min-width:650px) and (max-width:800px) {
+    .logo {
+        width: 48%;
+        height: 140px;
+    }
+
+    .inputStyle {
+        display: none;
+    }
+
+    .search {
+        border: none;
+    }
+
+    .searchButton {
+        display: none;
+    }
+
+    .search-icon>span {
+        font-size: 37px;
+        margin-left: 442px;
+        /* border: 2px solid #86B6C1; */
+    }
+
+    .icon {
+        /* border: 2px solid #86B6C1; */
+        width: 18%;
+        height: 60px;
+    }
+
+    .login {
+        width: 40%;
+    }
+
+    .bag {
+        width: 40%;
+    }
+
+    .navbar2 {
+        display: none;
+    }
+
+    .getOffer {
+        height: 98px;
+    }
+
+    .get-title {
+        width: 25%;
+        font-size: 17px;
+    }
+
+    .get-text {
+        width: 75%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        font-size: 12px;
+    }
+}
+
+/* media above 800px screen laptops */
