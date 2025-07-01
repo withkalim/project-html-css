@@ -236,7 +236,7 @@
                     </div>
                     <!-- main right card image started from here  -->
                     <div class="main-right">
-                        <div class="card">
+                        <div class="card" onclick="viewProduct(1)" style="cursor: pointer;">
                             <div class="card-img">
                                 <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/5f5b8707e995da728dc757efd199f6a7007e1e24/Miadora-6mm-Ladies-Wedding-Band-in-10k-Yellow-Gold.jpg?imwidth=3500&impolicy=medium"
                                     style="width:300px;height:300px;">
@@ -247,8 +247,8 @@
                                 <p><b style="text-decoration:line-through ;">$529.00</b> 61% Off MSRP</p>
                             </div>
                             <div class="card-disc">
-                                <a href="#">Miadora 6mm Ladies Wedding Band in 10k</a>
-                                <a href="#">Yellow Gold</a>
+                                <a href="#" onclick="event.stopPropagation();">Miadora 6mm Ladies Wedding Band in 10k</a>
+                                <a href="#" onclick="event.stopPropagation();">Yellow Gold</a>
                                 <p> by Miadora</p>
                             </div>
                             <div class="card-review">
@@ -272,7 +272,7 @@
                                 <p>No Reviews</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" >
                             <div class="card-img">
                                 <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/62d7b718ab1c8f3849ca36b5583c002cc798bb6e/Miadora-19-CT-TGW-Emerald-and-Round-Cut-Cubic-Zirconia-Multi-Row-Full-Eternity-Band-in-Sterling-Silver.jpg?imwidth=3500&impolicy=medium"
                                     style="width:300px;height:300px;">
@@ -954,6 +954,13 @@
                 </div>
             </div>
         </div>
+
+        <script>
+         function viewProduct(){
+            localStorage.setItem("selectedProduct", JSON.stringify(products.find(p => p.id === id)));
+            window.location.href = "product-details.html";
+         }
+        </script>
         <!-- above section was body and footer is outside the body div -->
         <!-- footer section comes under screen section -->
         <div class="footer">

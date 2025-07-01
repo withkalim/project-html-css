@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+    <body>
+      <div class="container">
+        <div class="form-container">
+          <form id="product-form">
+            <h2>Add Product</h2>
+            <div class="input-group">
+              <label>Product Name:</label>
+              <input type="text" id="product-name" placeholder="Enter Product Name" />
+            </div>
+            <div class="input-group">
+              <label>Price:</label>
+              <input type="text" id="price" placeholder="Enter Price" />
+            </div>
+            <div class="input-group">
+              <label>Category:</label>
+              <select id="category">
+                <option>Select</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Grocery</option>
+                <option>Furniture</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Image URL:</label>
+              <input type="file" id="image" placeholder="Choose image" />
+            </div>
+            <button class="button register-button" type="submit">Add Product</button>
+          </form>
+        </div>
+    
+        <div class="mainDiv">
+          <h2>Product List</h2>
+          <div id="product-list"></div>
+        </div>
+      </div>
+    </body>
+
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const productForm = document.getElementById("product-form");
+    const productList = document.getElementById("product-list");
+
+    // Load existing products from localStorage
+    let products = JSON.parse(localStorage.getItem("productList")) || [];
+    renderProducts();
+
+    // Event listener for adding a product
+    productForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from refreshing
+
+        // Get input values
+        const name = document.getElementById("product-name").value.trim();
+        const price = document.getElementById("price").value.trim();
+        const category = document.getElementById("category").value;
+        const image = document.getElementById("image").value.trim();
+
+        // Create a new product object
+        const product = { name, price, category, image };
+
+        // Add to products array and save in localStorage
+        products.push(product);
+        localStorage.setItem("productList", JSON.stringify(products));
+
+        // Render updated product list
+        renderProducts();
+
+        // Reset the form
+        productForm.reset();
+    });
+
+    // Function to render products using .map()
+    function renderProducts() {
+        productList.innerHTML = products
+            .map(
+                (product, index) => `
+                <div class="product-card">
+                    <img src="${product.image}" class="forimg">
+                    <h3>${product.name}</h3>
+                    <p>Price: ₹${product.price}</p>
+                    <p>Category: ${product.category}</p>
+                    <button class="delete-btn" data-index="${index}">Delete</button>
+                </div>
+            `
+            )
+            .join(""); // Convert array to string and insert as HTML
+
+        // Attach delete functionality
+        document.querySelectorAll(".delete-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const index = this.getAttribute("data-index");
+                products.splice(index, 1);
+                localStorage.setItem("productList", JSON.stringify(products));
+                renderProducts();
+            });
+        });
+    }
+});
+
+      
+   
+
+    //     function addProducts() {
+    //       var pName = document.getElementById("productName").value;
+    //       var pPrice = document.getElementById("productPrice").value;
+    //       var pCategory = document.getElementById("proCategory").value;
+    //       var pImg = document.getElementById("imgUrl").value;
+
+    //       var products = JSON.parse(localStorage.getItem("product")) || [];
+    //       products.push({pName, pPrice, pCategory, pImg});
+    //       localStorage.setItem("product", JSON.stringify(products));
+
+    //       alert("Your products has been stored in localStore");
+    //       window.location.href = "allproducts.html";
+
+    //       document.getElementById("productName").value = "";
+    //       document.getElementById("productPrice").value = "";
+    //       document.getElementById("proCategory").value = "";
+    //       document.getElementById("imgUrl").value = "";
+
+    // }
+  </script>
+</html>

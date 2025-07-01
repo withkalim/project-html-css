@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container-register">
+      <h2>Rigester here</h2>
+      <div class="input-group">
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          id="userName"
+          placeholder="Please Enter name"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <label>Your Email</label>
+        <input
+          type="text"
+          name="email"
+          id="userEmail"
+          placeholder="Please Enter email"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <label>Your Password</label>
+        <input
+          type="password"
+          name="password"
+          id="userpassword"
+          placeholder="Please Enter password"
+        />
+      </div>
+      <br />
+      <div class="button-group">
+        <button onclick="registerSave()" class="button register-button">
+          Register
+        </button>
+        <button class="button login-button">Login</button>
+      </div>
+    </div>
+  </body>
+
+  <!-- js code start from here -->
+  <script>
+    function registerSave() {
+      var name = document.getElementById("userName").value;
+      var email = document.getElementById("userEmail").value;
+      var password = document.getElementById("userpassword").value;
+
+      if (!name || !email || !password) {
+        alert("All fields are required!");
+        return;
+      }
+
+      var userData = JSON.parse(localStorage.getItem("users")) || [];
+
+      let userExists = userData.some((data) => data.email === email);
+      if (userExists) {
+        alert("Email already exists. Please log in or use another email.");
+        return;
+      }
+
+      userData.push({ name, email, password });
+      localStorage.setItem("users", JSON.stringify(userData));
+
+      alert("Registeration successfull");
+      document.getElementById("userName").value = "";
+      document.getElementById("userEmail").value = "";
+      document.getElementById("userpassword").value = "";
+    }
+    // for login button redirect to login page
+    document
+      .querySelector(".login-button")
+      .addEventListener("click", function () {
+        window.location.href = "login.html";
+      });
+  </script>
+</html>

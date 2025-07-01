@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Please Login</h2>
+      <div class="input-group">
+        <label>Your Email</label>
+        <input
+          type="email"
+          name="email"
+          id="userEmail"
+          placeholder="Please Enter email"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <label>Your Password</label>
+        <input
+          type="password"
+          name="password"
+          id="userPassword"
+          placeholder="Please Enter password"
+        />
+      </div>
+      <br />
+      <div class="button-group">
+        <button class="button login-button" onclick="loginCheck()">
+          Login
+        </button>
+        <button class="button register-button">Register</button>
+      </div>
+    </div>
+
+    <script>
+      function loginCheck() {
+        var email = document.getElementById("userEmail").value.trim();
+        var password = document.getElementById("userPassword").value.trim();
+
+        if (!email || !password) {
+          alert("Please enter both email and password.");
+          return;
+        }
+
+        var userData = JSON.parse(localStorage.getItem("users")) || [];
+
+        var validData = userData.find(
+          (data) => data.email.toLowerCase() === email.toLowerCase() && data.password === password
+        );
+
+        if (validData) {
+          alert("Login successful!");
+        } else {
+          alert("Login failed! Incorrect email or password.");
+        }
+
+        document.getElementById("userEmail").value = "";
+        document.getElementById("userPassword").value = "";
+      }
+
+      // Redirect to register page
+      document.querySelector(".register-button").addEventListener("click", function () {
+        window.location.href = "home.html";
+      });
+    </script>
+  </body>
+</html>
