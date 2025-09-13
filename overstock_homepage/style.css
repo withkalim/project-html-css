@@ -140,6 +140,36 @@ body {
     font-weight: 700;
     color: #fff;
 }
+.dropdown{
+  position: relative;
+  padding: 0px 22px ;
+}
+.dropdown-content{
+    display: none;
+    width: 150px;
+    background-color: #D92B2A;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    top: 100%;
+    left: 0;
+}
+.dropdown-content p {
+    color: #fff;
+    display: block;
+    padding: 10px 15px;
+    white-space: nowrap;
+    margin: 0;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown:hover{
+    background-color: #b92121;
+}
+.dropdown-content p:hover{
+    background-color: #b92121;
+}
 
 /* form here body contain start */
 .body {
